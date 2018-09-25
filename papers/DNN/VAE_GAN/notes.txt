@@ -1,0 +1,22 @@
+Tue Sep 19 08:34:30 EDT 2017
+
+Gal and Ghahramani have a way to perform dropout on RNNs, building on their analysis of dropout as performing averaging across a class of models, in the Bayesian view.
+
+This gives the best currently known perplexity results for language models -- 73.4 for Penn TreeBank.
+
+** Find code and run it.
+
+
+Tue Sep 19 04:28:46 EDT 2017
+
+Variational AutoEncoder
+
+Generative Adversarial Network:
+
+Take noise (typically Gaussian), add an MLP in front of it, this will learn a deterministic function.
+
+Train using GD from a gradient obtained by running an adversarial discriminator whose goal is to distinguish between the output of the generator and the pre-given data-set. The discriminator itself is an MLP.
+
+Both are jointly trained using an objective function that minimizes over G and maximizes over D the sum of the expectations of log(D(x)), with x sampled from the data, and of log(1 - D(G(z))) with z sampled from the noise.
+
+The latent variables here are the weights of the MLPs. 
